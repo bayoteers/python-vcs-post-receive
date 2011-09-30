@@ -1,0 +1,33 @@
+.TH USAGE: "1" "September 2011" "1.4.1" "manual page for post-receive"
+.SH NAME
+post-receive - automatically processes commit in svn, git or hg repository and comments on bugzilla
+.SH SYNOPSIS
+.B post-receive
+[\fIoptions\fR]
+.SH OPTIONS
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+show this help message and exit
+.TP
+\fB\-\-tm\fR
+Set target milestone when closing
+.TP
+\fB\-m\fR, \fB\-\-masteronly\fR
+Restrict to master branch only
+.TP
+\fB\-\-commentonly\fR
+Comment only, don't resolve the bug
+.TP
+\fB\-b\fR BRANCH, \fB\-\-branch\fR=\fIBRANCH\fR
+Restrict to specified brances only
+.TP
+\fB\-\-hg\fR=\fIHGNODE\fR
+Call for mercurial node
+.TP
+\fB\-\-svn\fR=\fIREV_NUM\fR
+Call for svn repository with rev number
+.TP
+\fB\-\-svnpath\fR=\fISVN_PATH\fR
+svn repository path
+.TP
+.SH SEE ALSO

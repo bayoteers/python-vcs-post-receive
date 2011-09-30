@@ -1,0 +1,39 @@
+python-vcs-post-receive
+
+    Simple post-receive script that uses python-vcs-commit to comment on bugzilla
+
+    Parses the commits contained in a git/hg/svn push and uses python-vcs-commit to comment on bugzilla bugs (the ones specicified with the syntax Fixes: #BUGN)
+
+    It can be used with Subversion (svn.tigris.org), Mercurial (mercurial.selenic.com) or GIT (git-scm.com) version control systems.
+
+INSTALLATION
+
+    If running on Debian:
+
+    debuild -us -uc -rfakeroot -I.git && sudo dpkg -i ../python-vcs-post-receive_<ver>_all.deb
+
+    should be enough. 
+    
+    (It will ask for dependencies so probably putting it in a repo and doing apt-get install might be better)
+
+LICENSE
+
+    The contents of this file are subject to the Mozilla Public License
+    Version 1.1 (the "License"); you may not use this file except in
+    compliance with the License. You may obtain a copy of the License at
+    http://www.mozilla.org/MPL/
+
+    Software distributed under the License is distributed on an "AS IS"
+    basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+    License for the specific language governing rights and limitations
+    under the License.
+
+    More info in debian/copyright.
+
+    The Initial Developer of the Original Code is "Nokia Corporation"
+    Portions created by the Initial Developer are Copyright (C) 2011 the
+    Initial Developer. All Rights Reserved.
+
+USAGE
+    
+    Check *.ex files in documentation directory to know how to run the hook

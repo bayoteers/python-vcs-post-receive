@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+PACKAGE := $(shell head -1 $(CURDIR)/debian/changelog | sed 's/^\([^ ]\+\) .*/\1/')
+DESTDIR := $(CURDIR)/debian/$(PACKAGE)
+
+%:
+	dh $@ --with python2
+
+override_dh_installdocs:
+	dh_install post-receive.cfg etc/vcs-post-receive/
+	dh_installdocs
+	dh_link usr/share/pyshared/post_receive.py usr/bin/post-receive
+	# For compatibility with old versions
+	dh_link usr/share/pyshared/post_receive.py usr/local/bin/post-receive
+
+override_dh_usrlocal:
+	#nothing
+
+override_dh_python2:
+	dh_python2
+	chmod +x $(DESTDIR)/usr/share/pyshared/post_receive.py

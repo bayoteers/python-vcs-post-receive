@@ -1,0 +1,4 @@
+/usr/bin/
+/usr/local/bin
+/etc/vcs-post-receive/
+/var/log/vcs-post-receive/

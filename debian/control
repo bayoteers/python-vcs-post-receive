@@ -1,0 +1,17 @@
+Source: python-vcs-post-receive
+Section: python
+Priority: optional
+Maintainer: Stefano Mosconi <stefano.mosconi@nokia.com>
+Build-Depends-Indep: debhelper (>= 8.0.0), python (>=2.6.6-3~)
+Standards-Version: 3.9.1
+
+Package: python-vcs-post-receive
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python-vcs-commit (>= 0.6)
+Replaces: dvcs-post-receive
+Conflicts: dvcs-post-receive
+Suggests: git, mercurial, subversion, trac
+Description: Simple post-receive script that uses python-vcs-commit to comment on bugzilla
+ Parses the commits contained in a git/hg/svn push and uses python-vcs-commit 
+ to comment on bugzilla bugs (the ones specicified with the syntax
+ Fixes: #BUGN)

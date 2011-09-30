@@ -1,0 +1,8 @@
+/var/log/vcs-post-receive/*.log {
+    weekly
+    missingok
+    sharedscripts
+    rotate 52
+    compress
+    notifempty
+}
